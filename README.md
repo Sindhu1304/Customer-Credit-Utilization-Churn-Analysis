@@ -1,109 +1,197 @@
-.
+Bank Customer Churn Analysis
+📌 Project Overview
 
-📊 Customer Credit Utilization & Churn Analysis
-Power BI | SQL | Excel
-A FinTech‑focused product analytics project inspired by CRED‑style customer insights.
+This project focuses on analyzing customer churn for a retail bank using the BankChurners dataset.
+The goal was to identify customer behavior patterns, evaluate churn risks, and design interactive dashboards that provide insights for both Product Analytics and Product Management roles.
 
-🎯 Project Objective
-The goal of this project was to analyze credit utilization, customer profiles, and churn risk using the BankChurners dataset. Inspired by product analytics practices at companies like CRED and Navi, the project delivers insights on:
+We approached the project in three stages:
 
-How customers use credit cards (utilization, spending, and inactivity).
+Data Cleaning & Preparation (Python / Excel)
 
-Which demographics (education, income, age, gender) drive the most spending.
+SQL Analysis (Customer profiling, churn insights)
 
-Early indicators of churn risk such as inactivity and frequent support contacts.
+Power BI Dashboarding (Two-page dashboard: Utilization Overview & Customer Profile with Churn Risk)
 
-This project simulates real product analytics work in FinTech, where data‑driven insights directly inform retention strategies and customer engagement models.
+🛠 Tools & Technologies
 
-## 🛠️ Tech Stack
-Power BI → Dashboard creation (2 interactive pages)
+Python (Pandas, NumPy) → data cleaning & preprocessing
 
-SQL (PostgreSQL/MySQL syntax) → Supporting queries for customer segmentation & risk analysis
+SQL (PostgreSQL / MySQL) → querying and extracting insights
 
-Excel → Data cleaning & preprocessing before BI integration
+Power BI → dashboard creation & visualization
 
-# Dashboard Pages
-## 📍 Page 1: Credit Utilization
-Focus: Customer spending, utilization, and churn overview
+Excel → quick checks and exploratory analysis
+
+📂 Dataset
+
+Source: BankChurners Dataset (Kaggle)
+
+Rows: ~10,000 customers
+
+Columns Used:
+
+Customer_Age, Gender, Education_Level, Marital_Status
+
+Income_Category, Card_Category, Credit_Limit, Avg_Utilization_Ratio
+
+Total_Trans_Amt, Total_Trans_Ct, Months_Inactive_12_mon
+
+Attrition_Flag (key column for churn analysis)
+
+We removed irrelevant columns such as Naive_Bayes_Classifier_* and redundant identifiers.
+Kept CLIENTNUM for customer identification.
+
+🔎 Step 1: Data Cleaning
+
+Checked for null values → none found.
+
+Removed duplicates → none present.
+
+Dropped irrelevant columns (Naive Bayes classifier outputs).
+
+Final cleaned dataset exported as BankChurners_Cleaned.csv.
+
+🛢 Step 2: SQL Analysis
+
+We imported the cleaned dataset into SQL and performed analysis using PostgreSQL.
+
+Key Queries & Insights
+
+Total Customers & Churned Customers
+
+Found total customer count and attrited (churned) count.
+
+Insight: ~16% customers churned, requiring retention strategies.
+
+Churn by Gender
+
+Compared attrition rates between Male vs Female.
+
+Insight: Churn is slightly higher among female customers, suggesting potential dissatisfaction or different expectations.
+
+Churn by Age Group
+
+Grouped customers into age buckets.
+
+Insight: Middle-aged customers (40–50) showed higher attrition risk.
+
+Income vs Attrition
+
+Analyzed income category against churn rate.
+
+Insight: Customers in lower income categories churn more frequently, while high-income customers show better retention.
+
+Card Category & Attrition
+
+Compared Blue, Silver, Gold, Platinum card holders.
+
+Insight: Majority of churn came from Blue card customers.
+
+📌 All SQL queries were stored in a .sql file, and outputs were exported for documentation.
+
+📊 Step 3: Power BI Dashboard
+
+We built a two-page dashboard for executives and product teams.
+
+📍 Page 1: Utilization Overview
 
 KPIs:
 
-Total Customers & Attrition Rate (%)
+Total Customers
 
-Avg Credit Utilization Ratio
+Active Customers
 
-Total Transaction Amount
+Attrited Customers
 
-Customers with High Utilization
+Churn Rate %
 
 Visuals:
 
-Donut Chart: Gender distribution
+Donut Chart → Customer Distribution by Gender
 
-Gauge: Avg Credit Utilization vs Benchmark
+Bar Chart → Education Level vs Number of Customers
 
-Bar Chart: Card Category vs Avg Spend
+Column Chart → Income Category vs Number of Customers
 
-Trendline: Monthly Transaction Amounts
-
-KPI Cards for Attrition & Utilization
-
+Line Chart → Avg Utilization Ratio Trend across Age
 
 Insights:
 
-Clear gender split in customer base, with males slightly higher.
+Customer base is balanced across genders.
 
-Avg utilization shows most customers stay in the safe 30–40% zone, but a small high‑risk segment uses >70%.
+Graduate customers form the majority, but also show notable churn.
 
-Platinum and Gold cardholders contribute the highest transaction volumes.
+Middle-income groups are the most common cardholders.
 
-## 📍 Page 2: Customer Profile
-Focus: Demographics, education, and churn risk
+Utilization ratio trends peak around mid-age, then decline.
+
+📍 Page 2: Customer Profile & Churn Risk
 
 KPIs:
 
-Graduate Customers (Top Spending Group)
+Graduate %
 
-Attrition Rate by Education Level
+Avg Months Inactive (12M)
 
-Top Education Segment by Avg Spending
+Avg Contacts (12M)
 
-% of Highly Educated Customers
+Churn Rate %
 
 Visuals:
 
-Scatter Plot: Inactivity vs Support Contacts (churn risk cluster)
+Stacked Bar → Marital Status vs Customer Count
 
-Bar Chart: Education Level vs Avg Spending
+Clustered Bar → Card Category vs Average Credit Limit
 
-KPI Cards: Graduate Spending & Risk Education Group
+Column Chart → Education Level vs Attrition Rate
 
-Donut Chart: Income Distribution
+Heatmap → Income Category vs Attrition Rate
 
-Slicers: Gender, Income Category, Education Level, Card Category, Age Group
+Line Chart → Months Inactive vs Attrition Rate
 
+Column Chart → Contacts Count vs Attrition Rate
 
 Insights:
 
-Graduates drive the highest total spend, making them the most valuable segment.
+Married customers dominate the customer base.
 
-Customers inactive for >6 months yet contacting support frequently show elevated churn risk.
+Blue card holders have lower credit limits and higher attrition.
 
-Higher income brackets correlate with higher utilization, aligning with FinTech premium targeting models.
+Attrition increases among customers with lower education levels.
 
-## SQL Analysis
-Key queries included:
+Lower income customers are at highest churn risk.
 
-Overall Churn Rate
+Inactivity is a strong churn driver — customers inactive >4 months churn significantly more.
 
-Attrition by Gender, Education, and Age Group
+High contact frequency correlates with attrition, possibly due to service dissatisfaction.
 
-High‑Risk Customers: Inactive ≥6 months + Support Contacts ≥4
+🎯 Final Business Value
 
-Spending Trends: By Income Category and Education Level
+Helped identify high-risk customer segments → low income, inactive >4 months, Blue card holders.
 
-Utilization Benchmarks: Avg Utilization per Card Category
+Provided actionable insights for product managers to improve customer retention strategies.
 
+Showed how product analysts can use SQL + BI dashboards to support data-driven decisions.
+
+Demonstrated a full analytics pipeline: from data cleaning → SQL analysis → BI dashboards → business insights.
+
+📖 How This Helps Product Roles
+
+For Product Analysts (PA):
+
+SQL skills to extract and analyze churn trends.
+
+KPI design to track churn risk and customer engagement.
+
+Dashboards that monitor usage patterns.
+
+For Product Managers (PM):
+
+High-level view of churn drivers to plan retention campaigns.
+
+Ability to segment customers for tailored product offerings.
+
+Strategic insights into which segments to prioritize (e.g., inactive, low-income, or specific card categories).
 
 
 ##  What I Learned
@@ -120,13 +208,4 @@ Identify high‑value customers
 Reduce churn with early risk signals
 
 Personalize offers based on education, income, and utilization
-
-## Industry Relevance
-This project simulates the work of a Product Analytics Intern at CRED/Navi, combining technical execution with business impact. The insights can help a FinTech company:
-
-Detect high churn risk segments early
-
-Reward top spenders (e.g., Graduates, Platinum users)
-
-Optimize customer engagement through personalized product strategies
 
