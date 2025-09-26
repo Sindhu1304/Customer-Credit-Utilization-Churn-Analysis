@@ -47,7 +47,6 @@ Bar Chart: Card Category vs Avg Spend
 Trendline: Monthly Transaction Amounts
 
 KPI Cards for Attrition & Utilization
-<img width="1103" height="759" alt="image" src="https://github.com/user-attachments/assets/ce870ea4-5db1-4d92-8275-4b6f0bf247b2" />
 
 
 Insights:
@@ -82,7 +81,6 @@ KPI Cards: Graduate Spending & Risk Education Group
 Donut Chart: Income Distribution
 
 Slicers: Gender, Income Category, Education Level, Card Category, Age Group
-<img width="981" height="651" alt="image" src="https://github.com/user-attachments/assets/cf66de5f-85bf-4758-a6a1-add6fd87f041" />
 
 
 Insights:
