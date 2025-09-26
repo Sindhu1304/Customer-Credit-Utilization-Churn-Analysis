@@ -125,6 +125,9 @@ Middle-income groups are the most common cardholders.
 
 Utilization ratio trends peak around mid-age, then decline.
 
+<img width="1056" height="709" alt="image" src="https://github.com/user-attachments/assets/f58d7c2e-3475-4c67-9a48-5a151944d9a9" />
+
+
 📍 Page 2: Customer Profile & Churn Risk
 
 KPIs:
@@ -164,6 +167,9 @@ Lower income customers are at highest churn risk.
 Inactivity is a strong churn driver — customers inactive >4 months churn significantly more.
 
 High contact frequency correlates with attrition, possibly due to service dissatisfaction.
+
+<img width="1226" height="792" alt="image" src="https://github.com/user-attachments/assets/8e4e5f95-ee14-458d-a45b-bc1ce79edba2" />
+
 
 🎯 Final Business Value
 
