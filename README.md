@@ -1,5 +1,7 @@
-Bank Customer Churn Analysis
-📌 Project Overview
+### Bank Customer Churn Analysis
+
+
+## Project Overview
 
 This project focuses on analyzing customer churn for a retail bank using the BankChurners dataset.
 The goal was to identify customer behavior patterns, evaluate churn risks, and design interactive dashboards that provide insights for both Product Analytics and Product Management roles.
@@ -12,7 +14,7 @@ SQL Analysis (Customer profiling, churn insights)
 
 Power BI Dashboarding (Two-page dashboard: Utilization Overview & Customer Profile with Churn Risk)
 
-🛠 Tools & Technologies
+## Tools & Technologies
 
 Python (Pandas, NumPy) → data cleaning & preprocessing
 
@@ -22,7 +24,7 @@ Power BI → dashboard creation & visualization
 
 Excel → quick checks and exploratory analysis
 
-📂 Dataset
+## Dataset
 
 Source: BankChurners Dataset (Kaggle)
 
@@ -41,7 +43,7 @@ Attrition_Flag (key column for churn analysis)
 We removed irrelevant columns such as Naive_Bayes_Classifier_* and redundant identifiers.
 Kept CLIENTNUM for customer identification.
 
-🔎 Step 1: Data Cleaning
+## Step 1: Data Cleaning
 
 Checked for null values → none found.
 
@@ -51,7 +53,7 @@ Dropped irrelevant columns (Naive Bayes classifier outputs).
 
 Final cleaned dataset exported as BankChurners_Cleaned.csv.
 
-🛢 Step 2: SQL Analysis
+## Step 2: SQL Analysis
 
 We imported the cleaned dataset into SQL and performed analysis using PostgreSQL.
 
@@ -89,13 +91,13 @@ Insight: Majority of churn came from Blue card customers.
 
 📌 All SQL queries were stored in a .sql file, and outputs were exported for documentation.
 
-📊 Step 3: Power BI Dashboard
+## Step 3: Power BI Dashboard
 
 We built a two-page dashboard for executives and product teams.
 
-📍 Page 1: Utilization Overview
+# Page 1: Utilization Overview
 
-KPIs:
+ KPIs:
 
 Total Customers
 
@@ -128,7 +130,7 @@ Utilization ratio trends peak around mid-age, then decline.
 <img width="1056" height="709" alt="image" src="https://github.com/user-attachments/assets/f58d7c2e-3475-4c67-9a48-5a151944d9a9" />
 
 
-📍 Page 2: Customer Profile & Churn Risk
+# Page 2: Customer Profile & Churn Risk
 
 KPIs:
 
@@ -171,7 +173,7 @@ High contact frequency correlates with attrition, possibly due to service dissat
 <img width="1226" height="792" alt="image" src="https://github.com/user-attachments/assets/8e4e5f95-ee14-458d-a45b-bc1ce79edba2" />
 
 
-🎯 Final Business Value
+## Final Business Value
 
 Helped identify high-risk customer segments → low income, inactive >4 months, Blue card holders.
 
@@ -181,7 +183,7 @@ Showed how product analysts can use SQL + BI dashboards to support data-driven d
 
 Demonstrated a full analytics pipeline: from data cleaning → SQL analysis → BI dashboards → business insights.
 
-📖 How This Helps Product Roles
+## How This Helps Product Roles
 
 For Product Analysts (PA):
 
